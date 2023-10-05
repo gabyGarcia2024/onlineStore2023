@@ -23,7 +23,7 @@ class CarritoDeCompra {
 }
 
 // Evento para agregar productos al carrito
-const botonesAgregarAlCarrito = document.querySelectorAll('.bg-blue-500');
+const botonesAgregarAlCarrito = document.querySelectorAll('.bg-yellow-300');
 const carrito = new CarritoDeCompra();
 
 botonesAgregarAlCarrito.forEach((boton, index) => {
