@@ -7,26 +7,34 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Banner con un gradiente de fondo y un texto grande -->
-    <div class="bg-gradient-to-r from-purple-100 via-pink-100 to-red-100 p-4">
-        <h1 class="text-4xl text-[#c8ad8d]">Bienvenido a Starmoon's shop</h1>
-    </div>
+<!--Banner-->
+<header> 
+    <div class="relative rounded-lg overflow-hidden">
+        <img src="Bannner.png" alt="Imagen 1" class="w-full h-auto">
+        <div class="absolute inset-0 text-white opacity-100 flex items-center justify-center">
+            <div class="absolute inset-0 bg-black opacity-30"></div>
+            <h1 class="text-6xl font-sans">Bienvenido a Starmoon's Shop </h1>
+        </div>
+</header>
+
     <div class="product flex items-center m-4">
-        <img src="Chronos1.jpg" alt="Chronos" class="w-24 h-24">
+        <img src="Chronos1.jpg" alt="Chronos" class="w-52 h-52 rounded-lg">
         <div class="ml-4">
             <h3 class="text-lg font-bold">Chronos</h3>
             <p class="text-sm">Precio: $500</p>
         </div>
         <button class="ml-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="addToCart('Chronos', 500)">Añadir al carrito 🛒</button>
+
     </div>
 
     <div class="product flex items-center m-4">
-        <img src="Golder1.jpg" alt="Golder" class="w-24 h-24">
+        <img src="Golder1.jpg" alt="Golder" class="w-52 h-52 rounded-lg">
         <div class="ml-4">
             <h3 class="text-lg font-bold">Golder</h3>
             <p class="text-sm">Precio: $300</p>
         </div>
         <button class="ml-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="addToCart('Golder', 300)">Añadir al carrito 🛒</button>
+
     </div>
 
     <div id="cart" class="border border-black p-4">
@@ -36,7 +44,7 @@
         <!-- Botón que diga hacer compra y que al hacer clic muestre un formulario -->
         <button id="buy-button" class="px-4 py-2 bg-green-500 text-white rounded" onclick="showForm()">Hacer compra 💳</button>
         <!-- Formulario oculto con los campos requeridos para la compra -->
-        <form id="buy-form" class="hiddenflex flex-col gap-2 mt-4">
+        <form id="buy-form" class="hidden flex flex-col gap-2 mt-4">
             <label for="card-number">Número de tarjeta de crédito:</label>
             <input id="card-number" type="number" required>
             <label for="card-password">Contraseña:</label>

@@ -15,6 +15,7 @@
     total.textContent = "Total: $" + newTotal;
 }
 
+//------------------------------------------------------------------------------
 // Esta función muestra el formulario de compra al hacer clic en el botón de hacer compra
 function showForm() {
     // Obtener el elemento form con id "buy-form"
@@ -22,6 +23,7 @@ function showForm() {
     // Cambiar la clase del elemento form a "flex flex-col gap-2 mt-4" para mostrarlo
     form.className = "flex flex-col gap-2 mt-4";
 }
+
 
 // Esta función valida los datos del formulario y muestra un mensaje al hacer clic en el botón de confirmar compra
 function confirmPurchase() {
