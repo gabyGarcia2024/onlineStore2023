@@ -1,66 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starmoon's shop</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body>
-<!--Banner-->
-<header> 
-    <div class="relative rounded-lg overflow-hidden">
-        <img src="Bannner.png" alt="Imagen 1" class="w-full h-auto">
-        <div class="absolute inset-0 text-white opacity-100 flex items-center justify-center">
-            <div class="absolute inset-0 bg-black opacity-30"></div>
-            <h1 class="text-6xl font-sans">Bienvenido a Starmoon's Shop </h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Star's moon</title>
+  </head>
+  <body>
+    <div class="flex items-center justify-center min-h-screen bg-gray-100">
+      <div
+        class="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0"
+      >
+
+        <div class="flex flex-col justify-center p-8 md:p-14">
+          <span class="mb-3 text-4xl font-bold">Welcome back</span>
+          <span class="font-light text-gray-400 mb-8">
+            Welcom back! Please enter your details
+          </span>
+          <div class="py-4">
+            <span class="mb-2 text-md">Email</span>
+            <input
+              type="text"
+              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              name="email"
+              id="email"
+            />
+          </div>
+          <div class="py-4">
+            <span class="mb-2 text-md">Password</span>
+            <input
+              type="password"
+              name="pass"
+              id="pass"
+              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+            />
+          </div>
+          <div class="flex justify-between w-full py-4">
+            <div class="mr-24">
+              <input type="checkbox" name="ch" id="ch" class="mr-2" />
+              <span class="text-md">Remember for 30 days</span>
+            </div>
+            <span class="font-bold text-md">Forgot password</span>
+          </div>
+          <a href="mainpage.html">
+            <button class="w-full bg-black text-white p-2 rounded-lg mb-6 hover:bg-white hover:text-black hover:border hover:border-gray-300">
+              Sign in
+            </button>
+          </a>
+          
+          <button
+            class="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-black hover:text-white"
+          >
+            <img src="/onlineStore2023/src/fotos/google.jpg" alt="img" class="w-6 h-6 inline mr-2" />
+            Sign in with Google
+          </button>
+          <div class="text-center text-gray-400">
+            Dont'have an account?
+            <span class="font-bold text-black">Sign up for free</span>
+          </div>
         </div>
-</header>
 
-    <div class="product flex items-center m-4">
-        <img src="Chronos1.jpg" alt="Chronos" class="w-52 h-52 rounded-lg">
-        <div class="ml-4">
-            <h3 class="text-lg font-bold">Chronos</h3>
-            <p class="text-sm">Precio: $500</p>
+        <div class="relative">
+          <img
+            src="/onlineStore2023/src/fotos/loginimage.jpg"
+            alt="img"
+            class="w-[400px] h-full hidden rounded-r-2xl md:block object-cover"
+          />
+
         </div>
-        <button class="ml-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="addToCart('Chronos', 500)">Añadir al carrito 🛒</button>
-
+      </div>
     </div>
-
-    <div class="product flex items-center m-4">
-        <img src="Golder1.jpg" alt="Golder" class="w-52 h-52 rounded-lg">
-        <div class="ml-4">
-            <h3 class="text-lg font-bold">Golder</h3>
-            <p class="text-sm">Precio: $300</p>
-        </div>
-        <button class="ml-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="addToCart('Golder', 300)">Añadir al carrito 🛒</button>
-
-    </div>
-
-    <div id="cart" class="border border-black p-4">
-        <h2 class="text-xl font-bold m-0">Carrito de compras</h2>
-        <ul id="items" class="list-none p-0"></ul>
-        <p id="total" class="text-lg font-bold">Total: $0</p>
-        <!-- Botón que diga hacer compra y que al hacer clic muestre un formulario -->
-        <button id="buy-button" class="px-4 py-2 bg-green-500 text-white rounded" onclick="showForm()">Hacer compra 💳</button>
-        <!-- Formulario oculto con los campos requeridos para la compra -->
-        <form id="buy-form" class="hidden flex flex-col gap-2 mt-4">
-            <label for="card-number">Número de tarjeta de crédito:</label>
-            <input id="card-number" type="number" required>
-            <label for="card-password">Contraseña:</label>
-            <input id="card-password" type="password" required>
-            <label for="name">Nombre:</label>
-            <input id="name" type="text" required>
-            <label for="surname">Apellido:</label>
-            <input id="surname" type="text" required>
-            <label for="address">Lugar de residencia:</label>
-            <input id="address" type="text" required>
-            <!-- Botón que diga confirmar compra y que al hacer clic valide los datos y muestre un mensaje -->
-            <button id="confirm-button" class="px-4 py-2 bg-green-500 text-white rounded self-end" onclick="confirmPurchase()">Confirmar compra ✅</button>
-        </form>
-    </div>
-
-
-</body>
-<script src="main.js"></script>
+  </body>
 </html>
