@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starmoon's shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+<!--Banner-->
+<header> 
+    <div class="relative rounded-lg overflow-hidden">
+        <img src="/onlineStore2023/src/fotos/Bannner.png" alt="Imagen 1" class="w-full h-auto">
+        <div class="absolute inset-0 text-white opacity-100 flex items-center justify-center">
+            <div class="absolute inset-0 bg-black opacity-30"></div>
+            <h1 class="text-6xl font-sans">Bienvenido a Starmoon's Shop </h1>
+        </div>
+</header>
+
+
+    <div class="product flex items-center m-4">
+        <img src="/onlineStore2023/src/fotos/Chronos1.jpg" alt="Chronos" class="w-52 h-52 rounded-lg">
+        <div class="ml-4">
+            <h3 class="text-lg font-bold">Chronos</h3>
+            <p class="text-sm">Precio: $500</p>
+        </div>
+        <button class="ml-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="addToCart('Chronos', 500)">Añadir al carrito 🛒</button>
+
+    </div>
+
+    <div class="product flex items-center m-4">
+        <img src="/onlineStore2023/src/fotos/Golder1.jpg" alt="Golder" class="w-52 h-52 rounded-lg">
+        <div class="ml-4">
+            <h3 class="text-lg font-bold">Golder</h3>
+            <p class="text-sm">Precio: $300</p>
+        </div>
+        <button class="ml-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="addToCart('Golder', 300)">Añadir al carrito 🛒</button>
+
+    </div>
+
+    <div class="product flex items-center m-4">
+        <img src="..." alt="Miss" class="w-52 h-52 rounded-lg">
+        <div class="ml-4">
+            <h3 class="text-lg font-bold">Miss</h3>
+            <p class="text-sm">Precio: $300</p>
+        </div>
+        <button class="ml-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="addToCart('Golder', 300)">Añadir al carrito 🛒</button>
+
+    </div>
+
+    <div class="product flex items-center m-4">
+        <img src="......" alt="Pretty" class="w-52 h-52 rounded-lg">
+        <div class="ml-4">
+            <h3 class="text-lg font-bold">Pretty</h3>
+            <p class="text-sm">Precio: $300</p>
+        </div>
+        <button class="ml-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="addToCart('Golder', 300)">Añadir al carrito 🛒</button>
+
+    </div>
+
+    <div class="container-icon w-12">
+        <div class="container-cart-icon">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="icon-cart"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                />
+            </svg>
+            <div class="count-products">
+                <span id="contador-productos">0</span>
+            </div>
+        </div>
+
+        <div class="container-cart-products hidden-cart">
+            <div class="row-product hidden">
+                <div class="cart-product">
+                    <div class="info-cart-product">
+                        <span class="cantidad-producto-carrito">1</span>
+                        <p class="titulo-producto-carrito">Producto</p>
+                        <span class="precio-producto-carrito">$90</span>
+                    </div>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="icon-close"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="cart-total hidden">
+                <h3>Total:</h3>
+                <span class="total-pagar">$200</span>
+            </div>
+            <p class="cart-empty">El carrito está vacío</p>
+        </div>
+    </div>
+        <!-- Botón que diga hacer compra y que al hacer clic muestre un formulario -->
+        <button id="buy-button" class="px-4 py-2 bg-green-500 text-white rounded" onclick="showForm()">Hacer compra 💳</button>
+        <!-- Formulario oculto con los campos requeridos para la compra -->
+        <form id="buy-form" class="hidden flex flex-col gap-2 mt-4">
+            <label for="card-number">Número de tarjeta de crédito:</label>
+            <input id="card-number" type="number" required>
+            <label for="card-password">Contraseña:</label>
+            <input id="card-password" type="password" required>
+            <label for="name">Nombre:</label>
+            <input id="name" type="text" required>
+            <label for="surname">Apellido:</label>
+            <input id="surname" type="text" required>
+            <label for="address">Lugar de residencia:</label>
+            <input id="address" type="text" required>
+            <!-- Botón que diga confirmar compra y que al hacer clic valide los datos y muestre un mensaje -->
+            <button id="confirm-button" class="px-4 py-2 bg-green-500 text-white rounded self-end" onclick="confirmPurchase()">Confirmar compra ✅</button>
+        </form>
+    </div>
+
+
+</body>
+<script src="main.js"></script>
+</html>
